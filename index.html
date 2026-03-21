@@ -405,7 +405,7 @@
     <div style="font-size:11px; font-weight:500; letter-spacing:0.2em; text-transform:uppercase; color:#9f69c9; margin-bottom:32px;">Data Collection Policy</div>
     <div style="border-top:1px solid #1a1a1a;">
       <div style="padding:28px 0; border-bottom:1px solid #1a1a1a;">
-        <div style="font-size:13px; color:#fff; line-height:1.75;">Personal data is never gathered. For tax compliance, we only track:<br>[a] Sales and sales tax<br>[b] Costs and refurbishment<br>[c] Inventory</div>
+        <div style="font-size:13px; color:#fff; line-height:1.75;">Personal data is never gathered. For tax compliance, we only track:<br><span style="color:#9f69c9;font-weight:600;">[a]</span> Sales and sales tax<br><span style="color:#9f69c9;font-weight:600;">[b]</span> Costs and refurbishment<br><span style="color:#9f69c9;font-weight:600;">[c]</span> Inventory</div>
       </div>
     </div>
   </div>
@@ -486,7 +486,7 @@
       <!-- 7 -->
       <div style="display:grid; grid-template-columns:80px 1fr; gap:32px; padding:28px 0; border-bottom:1px solid #1a1a1a;">
         <div style="font-size:10px; letter-spacing:0.15em; color:#9f69c9; text-transform:uppercase; font-weight:600; padding-top:3px;">7. Payment & Support</div>
-        <div style="font-size:13px; color:#fff; line-height:1.75;"><strong>Unit Cost:</strong> varies (see listed price)<br><strong>Payment:</strong> Cash sent to secure PO Box; devices ship on receipt.<br>Support: <a href="mailto:securexhardware@tuta.mail" style="color:#6366f1; text-decoration:none;">securexhardware@tuta.mail</a></div>
+        <div style="font-size:13px; color:#fff; line-height:1.75;"><strong>Unit Cost:</strong> varies (see listed price)<br><strong>Payment:</strong> Cash sent to secure PO Box; devices ship on receipt.<br>Support: <a href="/cdn-cgi/l/email-protection#c0b3a5a3b5b2a5b8a8a1b2a4b7a1b2a580b4b5b4a1eeada1a9ac" style="color:#6366f1; text-decoration:none;"><span class="__cf_email__" data-cfemail="473422243235223f2f263523302635220733323326692a262e2b">[email&#160;protected]</span></a></div>
       </div>
 
       <!-- 8 -->
@@ -527,4 +527,17 @@
   function openPolicy() { document.getElementById('policy-overlay').style.display = 'block'; document.body.style.overflow = 'hidden'; }
   function closePolicy() { document.getElementById('policy-overlay').style.display = 'none'; document.body.style.overflow = ''; }
   function openLegal() { document.getElementById('legal-overlay').style.display = 'block'; document.body.style.overflow = 'hidden'; }
-  function
+  function closeLegal() { document.getElementById('legal-overlay').style.display = 'none'; document.body.style.overflow = ''; }
+  function openSupport() { document.getElementById('support-overlay').style.display = 'block'; document.body.style.overflow = 'hidden'; }
+  function closeSupport() { document.getElementById('support-overlay').style.display = 'none'; document.body.style.overflow = ''; }
+  document.addEventListener('DOMContentLoaded', function() {
+    document.querySelectorAll('.f-desc').forEach(el => {
+      el.innerHTML = el.innerHTML.replace(/\[([a-e])\]/g, (match, letter) =>
+        `<span style="color:#9f69c9;font-weight:600;">[${letter.toLowerCase()}]</span>`
+      );
+    });
+  });
+</script>
+
+</body>
+</html>
