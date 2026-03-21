@@ -11,7 +11,7 @@
 
   body {
     background: #0a0a0a;
-    color: #c0c0c0;
+    color: #fff;
     font-family: 'Inter', sans-serif;
     font-size: 15px;
     line-height: 1.6;
@@ -74,7 +74,7 @@
     font-weight: 500;
     letter-spacing: 0.2em;
     text-transform: uppercase;
-    color: #444;
+    color: #9f69c9;
     margin-bottom: 28px;
   }
 
@@ -97,7 +97,7 @@
     margin-bottom: 16px;
   }
 
-  .lead { font-size: 15px; color: #555; max-width: 520px; margin-bottom: 36px; }
+  .lead { font-size: 15px; color: #fff; max-width: 520px; margin-bottom: 36px; }
 
   /* BUTTONS */
   .btn {
@@ -108,7 +108,7 @@
     text-decoration: none;
     padding: 10px 24px;
     border: 1px solid #333;
-    color: #888;
+    color: #fff;
     transition: color 0.15s, border-color 0.15s;
     display: inline-block;
   }
@@ -127,7 +127,7 @@
     border-top: 1px solid #1e1e1e;
   }
   .stat-num { font-size: 1.6rem; font-weight: 300; color: #fff; display: block; margin-bottom: 3px; }
-  .stat-label { font-size: 11px; letter-spacing: 0.1em; text-transform: uppercase; color: #3a3a3a; }
+  .stat-label { font-size: 11px; letter-spacing: 0.1em; text-transform: uppercase; color: #fff; }
 
   /* FEATURE LIST */
   .feature-list { margin-top: 0; }
@@ -142,13 +142,13 @@
   .f-code {
     font-size: 10px;
     letter-spacing: 0.15em;
-    color: #3a3a3a;
+    color: #4a4a4a;
     text-transform: uppercase;
     padding-top: 3px;
     font-weight: 500;
   }
   .f-title { font-size: 14px; font-weight: 500; color: #ddd; margin-bottom: 3px; }
-  .f-desc { font-size: 13px; color: #666; line-height: 1.75; }
+  .f-desc { font-size: 13px; color: #fff; line-height: 1.75; }
 
   /* ABOUT */
   .two-col { display: grid; grid-template-columns: 1fr 1fr; gap: 56px; }
@@ -235,52 +235,55 @@
     justify-content: space-between;
     align-items: flex-start;
   }
-  .footer-logo { font-size: 11px; font-weight: 600; letter-spacing: 0.15em; text-transform: uppercase; color: #2a2a2a; }
-  .footer-copy { font-size: 11px; color: #2a2a2a; }
+  .footer-logo { font-size: 11px; font-weight: 600; letter-spacing: 0.15em; text-transform: uppercase; color: #fff; }
+  .footer-copy { font-size: 11px; color: #fff; }
   .footer-link {
     font-size: 11px;
-    color: #2a2a2a;
+    color: #fff;
     text-decoration: none;
     transition: color 0.15s;
   }
-  .footer-link:hover { color: #888; }
+  .footer-link:hover { color: #aaa; }
+  .status-dot {
+    width: 8px; height: 8px;
+    border-radius: 50%;
+    background: #22c55e;
+    animation: blink 1.4s ease-in-out infinite;
+    flex-shrink: 0;
+  }
+  @keyframes blink {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0.2; }
+  }
+  .status-text { font-size: 12px; font-weight: 500; color: #22c55e; letter-spacing: 0.05em; }
 </style>
 </head>
 <body>
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+    document.querySelectorAll('.f-desc').forEach(el => {
+      el.innerHTML = el.innerHTML.replace(/\[([a-e])\]/g, (match, letter) =>
+        `<span style="color:#9f69c9;font-weight:600;">[${letter.toUpperCase()}]</span>`
+      );
+    });
+  });
+</script>
 
 <nav>
-  <div class="nav-logo">SecureX Hardware</div>
-  <ul class="nav-links">
-    <li><a href="#our-solution">Our Solution</a></li>
-    <li><a href="#about-us">About Us</a></li>
-    <li><a href="#products">Products & Pricing</a></li>
-  </ul>
+  <a href="#" class="nav-logo" style="text-decoration:none;">SecureX Hardware</a>
 </nav>
 
 <!-- HERO -->
 <section style="border-top: none;">
   <div class="section-inner" style="padding-top: 130px;">
     <div class="section-tag">Hardware Security</div>
-    <h1>Security starts at<br><strong>the silicon layer.</strong></h1>
-    <p class="lead">OpSec engineered below the OS. Tamper-evident, airgap-certified systems for teams that operate where failure isn't an option.</p>
+    <h1>Sovereignty starts<br><strong>in the silicon.</strong></h1>
+    <p class="lead" style="color:#4a4a4a;">Operation-ready hardware for individuals demanding full digital autonomy.</p>
     <div class="actions">
-      <a href="#our-solution" class="btn btn-white">Explore Solution</a>
+      <a href="#our-solution" class="btn btn-white" style="background:#9f69c9; border-color:#9f69c9; color:#fff;">Explore Solution</a>
       <a href="#products" class="btn">View Products</a>
     </div>
-    <div class="hero-stats">
-      <div>
-        <span class="stat-num">256-bit</span>
-        <span class="stat-label">AES Encryption</span>
-      </div>
-      <div>
-        <span class="stat-num">Zero</span>
-        <span class="stat-label">Exploit Window</span>
-      </div>
-      <div>
-        <span class="stat-num">12+</span>
-        <span class="stat-label">Gov Certifications</span>
-      </div>
-    </div>
+
   </div>
 </section>
 
@@ -339,18 +342,19 @@
       </div>
       <div class="feature-row">
         <div class="f-code">pricing</div>
-        <div>
+        <div style="display:flex; justify-content:space-between; align-items:flex-end; gap:24px;">
           <div class="f-desc">
             [a] hardware cost = ~$160<br>
             [b] labor cost = 15hr x $50 = $750<br>
-            a + b = [p] = <strong style="color:#ddd;">$910</strong>
+            <span style="color:#9f69c9;font-weight:600;">A</span> + <span style="color:#9f69c9;font-weight:600;">B</span> = <span style="color:#9f69c9;font-weight:600;">[P]</span> = <strong style="color:#22c55e;">$910</strong>
           </div>
+          <a href="#" style="flex-shrink:0; font-size:12px; font-weight:500; letter-spacing:0.08em; text-transform:uppercase; text-decoration:none; padding:10px 20px; border:1px solid #fff; color:#fff; white-space:nowrap; transition:background 0.15s, color 0.15s;" onmouseover="this.style.background='#fff';this.style.color='#000';" onmouseout="this.style.background='transparent';this.style.color='#fff';" onclick="openTOS(); return false;">🛒 Purchase</a>
         </div>
       </div>
       <div class="feature-row">
         <div class="f-code"></div>
         <div>
-          <div class="f-desc" style="color:#555;">(Devices ship without an OS, but <strong style="color:#666;">Qubes OS</strong> can be installed on request at no additional cost)</div>
+          <div class="f-desc" style="color:#4a4a4a;">(Devices ship without an OS, but <strong style="color:#fff;">Qubes OS</strong> can be installed on request at no additional cost)</div>
         </div>
       </div>
     </div>
@@ -378,12 +382,11 @@
 <!-- DATA COLLECTION POLICY OVERLAY -->
 <div id="policy-overlay" style="display:none; position:fixed; inset:0; background:#0a0a0a; z-index:999; overflow-y:auto;">
   <div style="max-width:700px; margin:0 auto; padding:80px 40px;">
-    <button onclick="closePolicy()" style="background:none; border:none; color:#444; font-size:12px; font-family:'Inter',sans-serif; letter-spacing:0.1em; text-transform:uppercase; cursor:pointer; margin-bottom:56px; padding:0; display:flex; align-items:center; gap:8px; transition:color 0.15s;" onmouseover="this.style.color='#fff'" onmouseout="this.style.color='#444'">← Back</button>
-    <div style="font-size:11px; font-weight:500; letter-spacing:0.2em; text-transform:uppercase; color:#444; margin-bottom:32px;">Data Collection Policy</div>
+    <button onclick="closePolicy()" style="background:none; border:none; color:#666; font-size:12px; font-family:'Inter',sans-serif; letter-spacing:0.1em; text-transform:uppercase; cursor:pointer; margin-bottom:56px; padding:0; display:flex; align-items:center; gap:8px; transition:color 0.15s;" onmouseover="this.style.color='#fff'" onmouseout="this.style.color='#666'">← Back</button>
+    <div style="font-size:11px; font-weight:500; letter-spacing:0.2em; text-transform:uppercase; color:#9f69c9; margin-bottom:32px;">Data Collection Policy</div>
     <div style="border-top:1px solid #1a1a1a;">
-      <div style="display:grid; grid-template-columns:80px 1fr; gap:32px; padding:28px 0; border-bottom:1px solid #1a1a1a;">
-        <div style="font-size:10px; letter-spacing:0.15em; color:#3a3a3a; text-transform:uppercase; font-weight:500; padding-top:3px;">data collection policy</div>
-        <div style="font-size:13px; color:#666; line-height:1.75;">At SecurexHardware, we understand the power of data, which is why we do not collect any of yours. However, to comply with local and federal tax laws, we do collect the following metrics: [a] Sales and sales tax collected. [b] Cost of goods sold and refurbishment costs. [c] Inventory.</div>
+      <div style="padding:28px 0; border-bottom:1px solid #1a1a1a;">
+        <div style="font-size:13px; color:#fff; line-height:1.75;">At SecurexHardware, we understand the power of data, which is why we do not collect any of yours. However, to comply with local and federal tax laws, we do collect the following metrics: [a] Sales and sales tax collected. [b] Cost of goods sold and refurbishment costs. [c] Inventory.</div>
       </div>
     </div>
   </div>
@@ -392,12 +395,11 @@
 <!-- LEGAL COMPLIANCE OVERLAY -->
 <div id="legal-overlay" style="display:none; position:fixed; inset:0; background:#0a0a0a; z-index:999; overflow-y:auto;">
   <div style="max-width:700px; margin:0 auto; padding:80px 40px;">
-    <button onclick="closeLegal()" style="background:none; border:none; color:#444; font-size:12px; font-family:'Inter',sans-serif; letter-spacing:0.1em; text-transform:uppercase; cursor:pointer; margin-bottom:56px; padding:0; display:flex; align-items:center; gap:8px; transition:color 0.15s;" onmouseover="this.style.color='#fff'" onmouseout="this.style.color='#444'">← Back</button>
-    <div style="font-size:11px; font-weight:500; letter-spacing:0.2em; text-transform:uppercase; color:#444; margin-bottom:32px;">Legal Compliance</div>
+    <button onclick="closeLegal()" style="background:none; border:none; color:#666; font-size:12px; font-family:'Inter',sans-serif; letter-spacing:0.1em; text-transform:uppercase; cursor:pointer; margin-bottom:56px; padding:0; display:flex; align-items:center; gap:8px; transition:color 0.15s;" onmouseover="this.style.color='#fff'" onmouseout="this.style.color='#666'">← Back</button>
+    <div style="font-size:11px; font-weight:500; letter-spacing:0.2em; text-transform:uppercase; color:#9f69c9; margin-bottom:32px;">Legal Compliance</div>
     <div style="border-top:1px solid #1a1a1a;">
-      <div style="display:grid; grid-template-columns:80px 1fr; gap:32px; padding:28px 0; border-bottom:1px solid #1a1a1a;">
-        <div style="font-size:10px; letter-spacing:0.15em; color:#3a3a3a; text-transform:uppercase; font-weight:500; padding-top:3px;">legal compliance</div>
-        <div style="font-size:13px; color:#666; line-height:1.75;"><em>SecurexHardware</em> fully complies with all applicable local, state, and federal laws</div>
+      <div style="padding:28px 0; border-bottom:1px solid #1a1a1a;">
+        <div style="font-size:13px; color:#fff; line-height:1.75;"><em>SecurexHardware</em> fully complies with all applicable local, state, and federal laws</div>
       </div>
     </div>
   </div>
@@ -406,18 +408,103 @@
 <!-- CUSTOMER SUPPORT OVERLAY -->
 <div id="support-overlay" style="display:none; position:fixed; inset:0; background:#0a0a0a; z-index:999; overflow-y:auto;">
   <div style="max-width:700px; margin:0 auto; padding:80px 40px;">
-    <button onclick="closeSupport()" style="background:none; border:none; color:#444; font-size:12px; font-family:'Inter',sans-serif; letter-spacing:0.1em; text-transform:uppercase; cursor:pointer; margin-bottom:56px; padding:0; display:flex; align-items:center; gap:8px; transition:color 0.15s;" onmouseover="this.style.color='#fff'" onmouseout="this.style.color='#444'">← Back</button>
-    <div style="font-size:11px; font-weight:500; letter-spacing:0.2em; text-transform:uppercase; color:#444; margin-bottom:32px;">Customer Support</div>
+    <button onclick="closeSupport()" style="background:none; border:none; color:#666; font-size:12px; font-family:'Inter',sans-serif; letter-spacing:0.1em; text-transform:uppercase; cursor:pointer; margin-bottom:56px; padding:0; display:flex; align-items:center; gap:8px; transition:color 0.15s;" onmouseover="this.style.color='#fff'" onmouseout="this.style.color='#666'">← Back</button>
+    <div style="font-size:11px; font-weight:500; letter-spacing:0.2em; text-transform:uppercase; color:#9f69c9; margin-bottom:32px;">Customer Support</div>
     <div style="border-top:1px solid #1a1a1a;">
-      <div style="display:grid; grid-template-columns:80px 1fr; gap:32px; padding:28px 0; border-bottom:1px solid #1a1a1a;">
-        <div style="font-size:10px; letter-spacing:0.15em; color:#3a3a3a; text-transform:uppercase; font-weight:500; padding-top:3px;">customer support</div>
-        <div style="font-size:13px; color:#666; line-height:1.75;">Your feedback and experiences matter to us. Feel free to reach out to us anytime with any questions, concerns, or feedback at: <a href="mailto:securexhardware@xxxx.xxx" style="color:#6366f1; text-decoration:none;">[securexhardware@xxxx.xxx]</a></div>
+      <div style="padding:28px 0; border-bottom:1px solid #1a1a1a;">
+        <div style="font-size:13px; color:#fff; line-height:1.75;">Your feedback and experiences matter to us. Feel free to reach out to us anytime with any questions, concerns, or feedback at: <a href="mailto:securexhardware@xxxx.xxx" style="color:#6366f1; text-decoration:none;">[securexhardware@xxxx.xxx]</a></div>
       </div>
     </div>
   </div>
 </div>
 
+<!-- TERMS OF SERVICE MODAL -->
+<div id="tos-overlay" onclick="if(event.target===this)closeTOS()" style="display:none; position:fixed; inset:0; background:rgba(0,0,0,0.75); z-index:999; overflow-y:auto; padding:60px 20px;">
+  <div style="background:#111; border:1px solid #2a2a2a; max-width:620px; width:100%; margin:0 auto; padding:40px; position:relative;">
+
+    <button onclick="closeTOS()" style="position:absolute; top:20px; right:20px; background:none; border:none; color:#555; font-size:18px; cursor:pointer; line-height:1; font-family:'Inter',sans-serif;" onmouseover="this.style.color='#fff'" onmouseout="this.style.color='#555'">✕</button>
+
+    <div style="font-size:11px; font-weight:500; letter-spacing:0.2em; text-transform:uppercase; color:#fff; margin-bottom:32px;">Terms of Service</div>
+
+    <div style="border-top:1px solid #1a1a1a;">
+
+      <!-- 1 -->
+      <div style="display:grid; grid-template-columns:80px 1fr; gap:32px; padding:28px 0; border-bottom:1px solid #1a1a1a;">
+        <div style="font-size:10px; letter-spacing:0.15em; color:#9f69c9; text-transform:uppercase; font-weight:600; padding-top:3px;">1. Acceptance</div>
+        <div style="font-size:13px; color:#fff; line-height:1.75;">By completing your purchase, you confirm that you have read and understand these Terms, understand that device(s) will not ship with an operating system unless requested, and accept full responsibility for software installation, configuration, and lawful use. <strong>Active acknowledgment (click) is required before continuing.</strong></div>
+      </div>
+
+      <!-- 2 -->
+      <div style="display:grid; grid-template-columns:80px 1fr; gap:32px; padding:28px 0; border-bottom:1px solid #1a1a1a;">
+        <div style="font-size:10px; letter-spacing:0.15em; color:#9f69c9; text-transform:uppercase; font-weight:600; padding-top:3px;">2. Privacy & Data</div>
+        <div style="font-size:13px; color:#fff; line-height:1.75;">SecurexHardware does <strong>not collect or store personal data</strong>. Minimal transactional data (sales, taxes, inventory) is retained for legal compliance only. Customers are responsible for maintaining privacy and security of all hardware, software, and operations.</div>
+      </div>
+
+      <!-- 3 -->
+      <div style="display:grid; grid-template-columns:80px 1fr; gap:32px; padding:28px 0; border-bottom:1px solid #1a1a1a;">
+        <div style="font-size:10px; letter-spacing:0.15em; color:#9f69c9; text-transform:uppercase; font-weight:600; padding-top:3px;">3. Risk & Liability</div>
+        <div style="font-size:13px; color:#fff; line-height:1.75;">Customers assume <strong>all risk</strong> associated with device use. SecurexHardware's liability is <strong>limited</strong>, except in cases of gross negligence or intentional misconduct. This includes loss, damage, or legal consequences from use or misuse.</div>
+      </div>
+
+      <!-- 4 -->
+      <div style="display:grid; grid-template-columns:80px 1fr; gap:32px; padding:28px 0; border-bottom:1px solid #1a1a1a;">
+        <div style="font-size:10px; letter-spacing:0.15em; color:#9f69c9; text-transform:uppercase; font-weight:600; padding-top:3px;">4. Shipping & Returns</div>
+        <div style="font-size:13px; color:#fff; line-height:1.75;">Risk of loss or damage passes to the Customer when devices ship. All sales are <strong>final</strong>, except as required by <strong>Pennsylvania consumer protection laws</strong> for defective or misrepresented products.</div>
+      </div>
+
+      <!-- 5 -->
+      <div style="display:grid; grid-template-columns:80px 1fr; gap:32px; padding:28px 0; border-bottom:1px solid #1a1a1a;">
+        <div style="font-size:10px; letter-spacing:0.15em; color:#9f69c9; text-transform:uppercase; font-weight:600; padding-top:3px;">5. Indemnification</div>
+        <div style="font-size:13px; color:#fff; line-height:1.75;">Customers agree to <strong>indemnify and hold harmless</strong> SecurexHardware from all claims, damages, or expenses arising from use, violation of these Terms, or violation of law.</div>
+      </div>
+
+      <!-- 6 -->
+      <div style="display:grid; grid-template-columns:80px 1fr; gap:32px; padding:28px 0; border-bottom:1px solid #1a1a1a;">
+        <div style="font-size:10px; letter-spacing:0.15em; color:#9f69c9; text-transform:uppercase; font-weight:600; padding-top:3px;">6. Governing Law</div>
+        <div style="font-size:13px; color:#fff; line-height:1.75;">These Terms are governed by the laws of <strong>Pennsylvania</strong>. Any disputes shall be resolved via <strong>mediation or arbitration</strong> in Pennsylvania. Customers consent to exclusive jurisdiction and venue there.</div>
+      </div>
+
+      <!-- 7 -->
+      <div style="display:grid; grid-template-columns:80px 1fr; gap:32px; padding:28px 0; border-bottom:1px solid #1a1a1a;">
+        <div style="font-size:10px; letter-spacing:0.15em; color:#9f69c9; text-transform:uppercase; font-weight:600; padding-top:3px;">7. Payment & Support</div>
+        <div style="font-size:13px; color:#fff; line-height:1.75;"><strong>Unit Cost:</strong> varies (see listed price)<br><strong>Payment:</strong> Cash sent to secure PO Box; devices ship on receipt.<br>Support: <a href="mailto:securexhardware@xxxx.xxx" style="color:#6366f1; text-decoration:none;">securexhardware@xxxx.xxx</a></div>
+      </div>
+
+      <!-- 8 -->
+      <div style="display:grid; grid-template-columns:80px 1fr; gap:32px; padding:28px 0; border-bottom:1px solid #1a1a1a;">
+        <div style="font-size:10px; letter-spacing:0.15em; color:#9f69c9; text-transform:uppercase; font-weight:600; padding-top:3px;">8. Software Option</div>
+        <div style="font-size:13px; color:#fff; line-height:1.75;">Qubes OS or other software can be installed <strong>on request at no extra cost</strong>.</div>
+      </div>
+
+    </div>
+
+    <!-- ACKNOWLEDGMENT -->
+    <div style="margin-top:48px; padding-top:32px; border-top:1px solid #1a1a1a;">
+      <label style="display:flex; align-items:flex-start; gap:14px; cursor:pointer;">
+        <input type="checkbox" id="tos-check" onchange="toggleContinue()" style="margin-top:3px; width:16px; height:16px; accent-color:#9f69c9; flex-shrink:0; cursor:pointer;">
+        <span style="font-size:13px; color:#fff; line-height:1.6;">I have read and understood the Terms of Service and accept full responsibility for the use of this device.</span>
+      </label>
+      <button id="tos-continue" disabled onclick="handleContinue()" style="margin-top:24px; font-size:12px; font-weight:500; letter-spacing:0.1em; text-transform:uppercase; padding:12px 32px; border:1px solid #333; background:transparent; color:#444; cursor:not-allowed; font-family:'Inter',sans-serif; transition:all 0.15s;">Continue →</button>
+    </div>
+
+  </div>
+</div>
+
 <script>
+  function openTOS() { document.getElementById('tos-overlay').style.display = 'block'; document.body.style.overflow = 'hidden'; }
+  function closeTOS() { document.getElementById('tos-overlay').style.display = 'none'; document.body.style.overflow = ''; document.getElementById('tos-check').checked = false; toggleContinue(); }
+  function toggleContinue() {
+    const btn = document.getElementById('tos-continue');
+    const checked = document.getElementById('tos-check').checked;
+    btn.disabled = !checked;
+    btn.style.color = checked ? '#fff' : '#444';
+    btn.style.borderColor = checked ? '#fff' : '#333';
+    btn.style.cursor = checked ? 'pointer' : 'not-allowed';
+  }
+  function handleContinue() {
+    alert('Thank you. Your order will be processed. Please send payment to the secure PO Box listed in the Terms of Service.');
+    closeTOS();
+  }
   function openPolicy() { document.getElementById('policy-overlay').style.display = 'block'; document.body.style.overflow = 'hidden'; }
   function closePolicy() { document.getElementById('policy-overlay').style.display = 'none'; document.body.style.overflow = ''; }
   function openLegal() { document.getElementById('legal-overlay').style.display = 'block'; document.body.style.overflow = 'hidden'; }
