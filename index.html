@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8"/>
 <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-<title>SecureX Hardware</title>
+<title>SECUREXHARDWARE</title>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet"/>
 <style>
   * { box-sizing: border-box; margin: 0; padding: 0; }
@@ -226,6 +226,15 @@
     color: #22c55e;
     letter-spacing: 0.05em;
   }
+  .stock-chart {
+    display: inline-block;
+    font-size: 14px;
+    animation: chartPulse 2s ease-in-out infinite;
+  }
+  @keyframes chartPulse {
+    0%, 100% { transform: translateY(0px); opacity: 1; }
+    50% { transform: translateY(-3px); opacity: 0.7; }
+  }
 
   /* FOOTER */
   footer {
@@ -263,20 +272,19 @@
   document.addEventListener('DOMContentLoaded', function() {
     document.querySelectorAll('.f-desc').forEach(el => {
       el.innerHTML = el.innerHTML.replace(/\[([a-e])\]/g, (match, letter) =>
-        `<span style="color:#9f69c9;font-weight:600;">[${letter.toUpperCase()}]</span>`
+        `<span style="color:#9f69c9;font-weight:600;">[${letter.toLowerCase()}]</span>`
       );
     });
   });
 </script>
 
 <nav>
-  <a href="#" class="nav-logo" style="text-decoration:none;">SecureX Hardware</a>
+  <a href="#" class="nav-logo" style="text-decoration:none;">SECUREXHARDWARE</a>
 </nav>
 
 <!-- HERO -->
 <section style="border-top: none;">
   <div class="section-inner" style="padding-top: 130px;">
-    <div class="section-tag">Hardware Security</div>
     <h1>Security starts<br><strong>in the silicon.</strong></h1>
     <p class="lead" style="color:#4a4a4a;">Operation-ready hardware for digital sovereigns.</p>
     <div class="actions">
@@ -290,18 +298,18 @@
 <!-- OUR SOLUTION -->
 <section id="our-solution">
   <div class="section-inner">
-    <div class="section-tag">Our Solution</div>
+    <div class="section-tag">Problem & Solution</div>
     <div class="feature-list">
       <div class="feature-row">
         <div class="f-code">problem</div>
         <div>
-          <div class="f-desc">In a surveillance-capitalist economy, 'best business practices' often function as domestic surveillance platforms. corporate ecosystems are engineered to infiltrate and consolidate all facets of our digital environment, while lobbying lawmakers to codify invasive and exploitative policies. For-profit data collection is poorly regulated, leading to leaks and exploitation by malicious actors and advisories. Advancements in artificial intelligence, predictive modeling, and deep learning algorithms present unprecedented opportunities for social regulation.</div>
+          <div class="f-desc">In a surveillance-capitalist economy, 'best business practices' often translate to mass domestic surveillance. corporate ecosystems engineered for large-scale data extraction routinely lobby lawmakers to codify unconstitutional and exploitative policies. These consolidated databases are poorly regulated, exposing sensitive data to advisories and malicious actors. These factors, combined with predictive modeling and deep learning algorithms, create unprecedented opportunities for social regulation.</div>
         </div>
       </div>
       <div class="feature-row">
         <div class="f-code">solution</div>
         <div>
-          <div class="f-desc">SecurexHardware exists as a response to this systematic failure. We recognize that your digital presence is an extension of yourself, and as such, is protected by the Constitution and must be safeguarded. Our solution: deliver operational-ready hardware specialized for high-threat environments to individuals who demand full digital security. When paired with comprehensive operational protocols, our anti-back-tracing hardware restores individual data agency. anchored on our core values, SecurexHardware commits to platforming professionals, activists, and the vulnerable alike.</div>
+          <div class="f-desc">SecurexHardware exists as a response to this systematic failure. Your digital presence is safeguarded by the Constitution. Our solution: deliver operational hardware specialized for high-threat environments to individuals who demand full digital sovereignty. Our anti-back-tracing combined proper operational security protocols, reinstates digital autonomy. anchored within our core values, SecurexHardware commits to platforming professionals, activists, and the vulnerable alike.</div>
         </div>
       </div>
     </div>
@@ -316,13 +324,13 @@
       <div class="feature-row">
         <div class="f-code">values</div>
         <div>
-          <div class="f-desc">[a] trust; we understand the concerns of sourcing operational hardware from third parties, that's why we practice what we preach. Every level of our systems employs top-down operational security protocols to prevent unauthorized access and compromise. We are committed to continuously exceeding our clients' standards. [b] transparency; radical transparency is our standard. We differentiate ourselves by being upfront with our process, pricing, and the reality of true anonymity. We thrive on the fact that our customers value extreme privacy; that's why SecurexHardware maintains a data policy to reflects this. [c] autonomy; SecurexHardware is committed to maintaining philosophical consistency and attacking the problem head-on. That means, no corporate agendas, no greedy investors, no user data, no client exposure. We are committed to being a bastion of independence.</div>
+          <div class="f-desc">[a] integrity: every level of our systems uses top-down operational protocols to guarantee that there are no compromises or vulnerability's.<br>[b] transparency: Radical transparency is our standard—process, pricing, and the reality of true anonymity.<br>[c] autonomy: We are committed to philosophical consistency and sovereignty—no corporate agendas, no greedy investors, no user data, no client exposure.</div>
         </div>
       </div>
       <div class="feature-row">
         <div class="f-code">clients</div>
         <div>
-          <div class="f-desc">We serve individuals who: [a] want to secede from the surveillance-capitalism market. [b] value digital security [c] requires obfuscation from malicious/unauthorized entities. [d] deal with critical data. [e] cannot carry out necessary protocols to render operationally capable device(s).</div>
+          <div class="f-desc">We serve individuals who:<br>[a] want to secede from the surveillance-capitalism market.<br>[b] value digital sovereignty<br>[c] requires obfuscation from malicious/unauthorized entities.<br>[d] deal with critical data.<br>[e] cannot carry out protocols to render operationally capable device(s).</div>
         </div>
       </div>
     </div>
@@ -337,18 +345,29 @@
       <div class="feature-row">
         <div class="f-code">process</div>
         <div>
-          <div class="f-desc">all devices/hardware are: [a] sourced through isolated, vetted vendors. [b] audited using validated security protocols to remove any compromises. [c] made of composite parts from matching models to obfuscate back-tracing. [d] customized to meet customers' operational needs.</div>
+          <div class="f-desc">All devices/hardware are:<br>[a] Acquired under strict operational security protocols<br>[b] sourced through isolated, vetted vendors.<br>[c] audited to remove potential compromises.<br>[d] built from composite parts to obfuscate back-tracing.</div>
         </div>
       </div>
       <div class="feature-row">
         <div class="f-code">pricing</div>
-        <div style="display:flex; justify-content:space-between; align-items:flex-end; gap:24px;">
+        <div style="display:flex; justify-content:space-between; align-items:flex-start; gap:24px;">
           <div class="f-desc">
-            [a] hardware cost = ~$160<br>
-            [b] labor cost = 15hr x $50 = $750<br>
-            <span style="color:#9f69c9;font-weight:600;">A</span> + <span style="color:#9f69c9;font-weight:600;">B</span> = <span style="color:#9f69c9;font-weight:600;">[P]</span> = <strong style="color:#22c55e;">$910</strong>
+            <span style="color:#9f69c9;font-weight:600;">a</span> + <span style="color:#9f69c9;font-weight:600;">b</span> = <span style="color:#9f69c9;font-weight:600;">[price]</span> = <strong style="color:#22c55e;">$950</strong><br>
+            [a] hardware cost = $200<br>
+            [b] technician rate = $750 (15hrs x $50)
           </div>
-          <a href="#" style="flex-shrink:0; font-size:12px; font-weight:500; letter-spacing:0.08em; text-transform:uppercase; text-decoration:none; padding:10px 20px; border:1px solid #fff; color:#fff; white-space:nowrap; transition:background 0.15s, color 0.15s;" onmouseover="this.style.background='#fff';this.style.color='#000';" onmouseout="this.style.background='transparent';this.style.color='#fff';" onclick="openTOS(); return false;">🛒 Purchase</a>
+          <div style="display:flex; flex-direction:column; align-items:flex-end; gap:10px; flex-shrink:0;">
+            <a href="#" style="font-size:12px; font-weight:500; letter-spacing:0.08em; text-transform:uppercase; text-decoration:none; padding:10px 20px; border:1px solid #fff; color:#fff; white-space:nowrap; transition:background 0.15s, color 0.15s;" onmouseover="this.style.background='#fff';this.style.color='#000';" onmouseout="this.style.background='transparent';this.style.color='#fff';" onclick="openTOS(); return false;">🛒 Purchase</a>
+            <span style="display:inline-flex; align-items:center; justify-content:center; width:100%; gap:8px;">
+              <span style="color:#fff; font-size:12px;">Stock Availability = 2</span>
+            </span>
+          </div>
+        </div>
+      </div>
+      <div class="feature-row">
+        <div class="f-code">payment</div>
+        <div>
+          <div class="f-desc">To place an order, send [price] cash (USD), along with your shipping address to (REDACTED PO BOX). We recommend that our customers use a operationally secure shipping address when receiving their hardware.</div>
         </div>
       </div>
       <div class="feature-row">
@@ -363,14 +382,14 @@
 
 <footer>
   <div style="display:flex; flex-direction:column; gap:8px;">
-    <div class="footer-logo">SecureX Hardware</div>
+    <div class="footer-logo">SECUREXHARDWARE</div>
     <div style="display:flex; align-items:center; gap:8px;">
       <div class="status-dot"></div>
       <span class="status-text">Operations up and running</span>
     </div>
   </div>
   <div style="display:flex; flex-direction:column; align-items:flex-end; gap:8px;">
-    <div class="footer-copy">© 2026 SecureX Hardware Security Systems</div>
+    <div class="footer-copy">© 2026 SECUREXHARDWARE Security Systems</div>
     <div style="display:flex; gap:20px;">
       <a href="#" class="footer-link" onclick="openPolicy(); return false;">🔒 Data Collection Policy</a>
       <a href="#" class="footer-link" onclick="openLegal(); return false;">⚖️ Legal Compliance</a>
@@ -386,7 +405,7 @@
     <div style="font-size:11px; font-weight:500; letter-spacing:0.2em; text-transform:uppercase; color:#9f69c9; margin-bottom:32px;">Data Collection Policy</div>
     <div style="border-top:1px solid #1a1a1a;">
       <div style="padding:28px 0; border-bottom:1px solid #1a1a1a;">
-        <div style="font-size:13px; color:#fff; line-height:1.75;">At SecurexHardware, we understand the power of data, which is why we do not collect any of yours. However, to comply with local and federal tax laws, we do collect the following metrics: [a] Sales and sales tax collected. [b] Cost of goods sold and refurbishment costs. [c] Inventory.</div>
+        <div style="font-size:13px; color:#fff; line-height:1.75;">Personal data is never gathered. For tax compliance, we only track:<br>[a] Sales and sales tax<br>[b] Costs and refurbishment<br>[c] Inventory</div>
       </div>
     </div>
   </div>
@@ -412,7 +431,7 @@
     <div style="font-size:11px; font-weight:500; letter-spacing:0.2em; text-transform:uppercase; color:#9f69c9; margin-bottom:32px;">Customer Support</div>
     <div style="border-top:1px solid #1a1a1a;">
       <div style="padding:28px 0; border-bottom:1px solid #1a1a1a;">
-        <div style="font-size:13px; color:#fff; line-height:1.75;">Your feedback and experiences matter to us. Feel free to reach out to us anytime with any questions, concerns, or feedback at: <a href="mailto:securexhardware@xxxx.xxx" style="color:#6366f1; text-decoration:none;">[securexhardware@xxxx.xxx]</a></div>
+        <div style="font-size:13px; color:#fff; line-height:1.75;">Your feedback and experiences matter to us. Feel free to reach out to us anytime with any questions, concerns, or feedback at: <a href="mailto:securexhardware@tuta.mail" style="color:#6366f1; text-decoration:none;">[securexhardware@tuta.mail]</a></div>
       </div>
     </div>
   </div>
@@ -467,7 +486,7 @@
       <!-- 7 -->
       <div style="display:grid; grid-template-columns:80px 1fr; gap:32px; padding:28px 0; border-bottom:1px solid #1a1a1a;">
         <div style="font-size:10px; letter-spacing:0.15em; color:#9f69c9; text-transform:uppercase; font-weight:600; padding-top:3px;">7. Payment & Support</div>
-        <div style="font-size:13px; color:#fff; line-height:1.75;"><strong>Unit Cost:</strong> varies (see listed price)<br><strong>Payment:</strong> Cash sent to secure PO Box; devices ship on receipt.<br>Support: <a href="mailto:securexhardware@xxxx.xxx" style="color:#6366f1; text-decoration:none;">securexhardware@xxxx.xxx</a></div>
+        <div style="font-size:13px; color:#fff; line-height:1.75;"><strong>Unit Cost:</strong> varies (see listed price)<br><strong>Payment:</strong> Cash sent to secure PO Box; devices ship on receipt.<br>Support: <a href="mailto:securexhardware@tuta.mail" style="color:#6366f1; text-decoration:none;">securexhardware@tuta.mail</a></div>
       </div>
 
       <!-- 8 -->
@@ -508,10 +527,4 @@
   function openPolicy() { document.getElementById('policy-overlay').style.display = 'block'; document.body.style.overflow = 'hidden'; }
   function closePolicy() { document.getElementById('policy-overlay').style.display = 'none'; document.body.style.overflow = ''; }
   function openLegal() { document.getElementById('legal-overlay').style.display = 'block'; document.body.style.overflow = 'hidden'; }
-  function closeLegal() { document.getElementById('legal-overlay').style.display = 'none'; document.body.style.overflow = ''; }
-  function openSupport() { document.getElementById('support-overlay').style.display = 'block'; document.body.style.overflow = 'hidden'; }
-  function closeSupport() { document.getElementById('support-overlay').style.display = 'none'; document.body.style.overflow = ''; }
-</script>
-
-</body>
-</html>
+  function
