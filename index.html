@@ -423,7 +423,7 @@
     <div style="font-size:11px; font-weight:500; letter-spacing:0.2em; text-transform:uppercase; color:#9f69c9; margin-bottom:32px;">Customer Support</div>
     <div style="border-top:1px solid #1a1a1a;">
       <div style="padding:28px 0; border-bottom:1px solid #1a1a1a;">
-        <div style="font-size:13px; color:#fff; line-height:1.75;">Your feedback and experiences matter to us. Feel free to reach out to us anytime with any questions, concerns, or feedback at: <a href="/cdn-cgi/l/email-protection#c6b5a3a5b3b4a3beaea7b4a2b1a7b4a386b2b3b2a7e8aba7afaa" style="color:#6366f1; text-decoration:none;">[<span class="__cf_email__" data-cfemail="bac9dfd9cfc8dfc2d2dbc8decddbc8dffacecfcedb94d7dbd3d6">[email&#160;protected]</span>]</a></div>
+        <div style="font-size:13px; color:#fff; line-height:1.75;">Your feedback and experiences matter to us. Feel free to reach out to us anytime with any questions, concerns, or feedback at: <a href="mailto:securexhardware@tutamail.com" style="color:#6366f1; text-decoration:none;">[securexhardware@tutamail.com]</a></div>
       </div>
     </div>
   </div>
@@ -486,7 +486,7 @@
   </div>
 </div>
 
-<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
+<script>
   function openTOS() {
     document.getElementById('tos-overlay').style.display = 'block';
     document.body.style.overflow = 'hidden';
@@ -517,4 +517,13 @@
   function openSupport() { document.getElementById('support-overlay').style.display = 'block'; document.body.style.overflow = 'hidden'; }
   function closeSupport() { document.getElementById('support-overlay').style.display = 'none'; document.body.style.overflow = ''; }
   document.addEventListener('DOMContentLoaded', function() {
-    docume
+    document.querySelectorAll('.f-desc').forEach(el => {
+      el.innerHTML = el.innerHTML.replace(/\[([a-e])\]/g, (match, letter) =>
+        `<span style="color:#9f69c9;font-weight:600;">[${letter.toLowerCase()}]</span>`
+      );
+    });
+  });
+</script>
+
+</body>
+</html>
