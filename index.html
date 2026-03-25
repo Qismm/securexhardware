@@ -142,7 +142,7 @@
   .f-code {
     font-size: 10px;
     letter-spacing: 0.15em;
-    color: #4a4a4a;
+    color: #adadad;
     text-transform: uppercase;
     padding-top: 3px;
     font-weight: 500;
@@ -177,7 +177,7 @@
   .product-row:first-child { border-top: 1px solid #1a1a1a; }
   .p-num { font-size: 10px; letter-spacing: 0.15em; color: #2a2a2a; text-transform: uppercase; margin-bottom: 8px; }
   .p-name { font-size: 15px; font-weight: 500; color: #ddd; margin-bottom: 6px; }
-  .p-desc { font-size: 13px; color: #4a4a4a; max-width: 420px; }
+  .p-desc { font-size: 13px; color: #adadad; max-width: 420px; }
   .p-tag {
     font-size: 10px; letter-spacing: 0.1em; text-transform: uppercase;
     color: #333; border: 1px solid #1e1e1e; padding: 4px 10px; white-space: nowrap; margin-top: 20px;
@@ -286,7 +286,7 @@
 <section style="border-top: none;">
   <div class="section-inner" style="padding-top: 130px;">
     <h1>Security starts<br><strong>in the silicon.</strong></h1>
-    <p class="lead" style="color:#4a4a4a;">Operation-ready hardware for digital sovereigns.</p>
+    <p class="lead" style="color:#adadad;">Operation-ready hardware for digital sovereigns.</p>
     <div class="actions">
       <a href="#our-solution" class="btn btn-white" style="background:#9f69c9; border-color:#9f69c9; color:#fff;">Explore Solution</a>
       <a href="#products" class="btn">View Products</a>
@@ -347,7 +347,7 @@
         </div>
       </div>
       <div class="feature-row" style="display:block; text-align:center; padding:24px 0;">
-        <div class="f-desc" style="color:#4a4a4a; font-style:italic;">(True anonymity is temporary. Every interaction leaves a footprint that will be correlated. Our hardware provides a secure foundation, but maintaining sovereignty requires deliberate protocols. Best practice: purge, annihilate, and discard devices after each operation.)</div>
+        <div class="f-desc" style="color:#adadad; font-style:italic;">(True anonymity is temporary. Every interaction leaves a footprint that will be correlated. Our hardware provides a secure foundation, but maintaining sovereignty requires deliberate protocols. Best practice: purge, annihilate, and discard devices after each operation.)</div>
       </div>
     </div>
   </div>
@@ -368,7 +368,7 @@
             [b] Technician rate = $750 (15hrs x $50)<br>
             📊 Stock Availability = 2<br>
             <br>
-            <span style="color:#4a4a4a; font-size:12px; display:block; text-align:center;">(Devices ship without an OS, but <strong style="color:#fff;">Qubes OS</strong> can be installed on request at no additional cost)</span>
+            <span style="color:#adadad; font-size:12px; display:block; text-align:center; font-style:italic;">(Devices ship without an OS, but <strong style="color:#fff;">Qubes OS</strong> can be installed on request at no additional cost)</span>
           </div>
         </div>
       </div>
@@ -379,7 +379,7 @@
             <span id="email-locked" style="display:inline-block; margin-top:10px;">
               <a onclick="openTOS(); return false;" href="#" style="display:inline-block; background:#1a1a1a; border:1px solid #333; color:#555; font-size:11px; letter-spacing:0.1em; text-transform:uppercase; padding:6px 14px; text-decoration:none; cursor:pointer; transition:border-color 0.15s, color 0.15s;" onmouseover="this.style.borderColor='#666';this.style.color='#888';" onmouseout="this.style.borderColor='#333';this.style.color='#555';">🔒 CLICK TO UNREDACT EMAIL</a>
             </span>
-            <span id="email-revealed" style="display:none;"><a href="mailto:securexhardware@tutamail.com" style="color:#6366f1; text-decoration:none;">securexhardware@tutamail.com</a></span>. wait for us respond with our wallet address.<br><br><span style="color:#4a4a4a; display:block; text-align:center;">(We only use XMR to protect your privacy. Your wallet and shipping address are deleted after device shipment, and we recommend using a one-time-use shipping address for your order.)</span></div>
+            <span id="email-revealed" style="display:none;"><a href="mailto:securexhardware@tutamail.com" style="color:#6366f1; text-decoration:none;">securexhardware@tutamail.com</a></span> wait for us respond with our wallet address.<br><br><span style="color:#adadad; display:block; text-align:center; font-style:italic;">(We only use XMR to protect your privacy. Your wallet and shipping address are deleted after device shipment, and we recommend using a one-time-use shipping address for your order.)</span></div>
         </div>
       </div>
     </div>
@@ -486,7 +486,7 @@
   </div>
 </div>
 
-<script>
+<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
   function openTOS() {
     document.getElementById('tos-overlay').style.display = 'block';
     document.body.style.overflow = 'hidden';
@@ -517,13 +517,4 @@
   function openSupport() { document.getElementById('support-overlay').style.display = 'block'; document.body.style.overflow = 'hidden'; }
   function closeSupport() { document.getElementById('support-overlay').style.display = 'none'; document.body.style.overflow = ''; }
   document.addEventListener('DOMContentLoaded', function() {
-    document.querySelectorAll('.f-desc').forEach(el => {
-      el.innerHTML = el.innerHTML.replace(/\[([a-e])\]/g, (match, letter) =>
-        `<span style="color:#9f69c9;font-weight:600;">[${letter.toLowerCase()}]</span>`
-      );
-    });
-  });
-</script>
-
-</body>
-</html>
+    docume
